@@ -44,11 +44,6 @@ input[type="checkbox"] {
 }
 
 
-
-body > div > div.row.pt-5 > div > div > div > div.mt-2.col > div > label {
-    font-size: 1.2em;
-    line-height: 1.5;
-}
 /*
 *
 * ==========================================
@@ -63,8 +58,15 @@ body {
     min-height: 100vh;
 }
 
-@media all and (min-height: 600px) {
-    body > div > div.row.pt-5 > div > div > div > div.mt-3.col > button {
 
-    }
+label.form-check-label {
+    font-size: 1.3em;
+    line-height: 1.5;
+
+}
+
+div[name="text"] {
+    min-width: 100px;
+    word-break: break-all;
+    cursor: text;
 }

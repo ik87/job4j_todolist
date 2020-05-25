@@ -31,6 +31,9 @@ Load Java HttpSession from JSESSIONID
 GSON, json Serialization/Deserialization
 - https://habr.com/ru/post/253266/
 
+SVG img
+- https://www.flaticon.com/packs/web-ui
+
 Bootstrap UI credit card
 - https://bootstrapious.com/p/bootstrap-credit-card-form
 
