@@ -22,7 +22,7 @@
         <div class="col-lg-9 mx-auto text-white text-center">
             <h2 class="display-4">Todolist <span class="badge badge-secondary">ik87</span></h2>
             <hr>
-            <div class="mt-2 col ">
+            <div class="mt-2">
                 <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="show_completed">
                     <label class="form-check-label" style="text-align: left"
@@ -33,49 +33,54 @@
         </div>
     </div>
 
-
-    <div class="row mt-3">
-        <div class="col-lg-9 mx-auto ">
+    <div class="row my-4">
+        <div class="mx-auto">
+            <div class="media">
+                <div id="newtask" class="row">
+                    <img src="img/writing-tool.svg" class="align-self-center mr-1" style="height: 2em">
+                    <div class="media-body">
+                        <h5 class="mt-2" style="color: #e4e3e3">NEW TASK</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="todo" class="col-lg-9 mx-auto">
             <!-- media object -->
-            <ul class="list-unstyled">
-                <li class="media my-4">
-                    <img name="status" src="img/circle-fill.svg" class="mr-3" style="height: 2em">
-                    <div class="media-body">
-                        <div style="text-decoration: line-through" name="text">&nbsp;
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad assumenda at atque aut consequuntur, cumque dolores esse et excepturi exercitationem impedit labore, libero magnam modi non sit sunt vel.
-                        </div>
-                        <div>
-                            <hr class="my-1">
-                            <div class="float-right" style="color: #e4e3e3">
-                                [13:00]&nbsp;
-                                <img src="img/trash.svg" class="mr-3" style="height: 1.2em">
 
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="media my-4">
-                    <img src="img/circle.svg" class="mr-3" style="height: 2em">
-                    <div class="media-body">
-                        <div name="text">Make todolist</div>
-                        <hr class="my-1">
-                        <div class="float-right" style="color: #e4e3e3">
-                            [14:00]&nbsp;
-                            <img src="img/trash.svg" class="mr-3" style="height: 1.2em">
-                        </div>
-                    </div>
-                </li>
-                <li class="media my-4">
-                    <div class="mx-auto mt-2 pr-3">
-                        <div class="media">
-                            <img src="img/writing-tool.svg" class="align-self-center mr-3" style="height: 2em">
-                            <div class="media-body">
-                                <h5 class="mt-2" style="color: #e4e3e3">NEW TASK</h5>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+            <!--            <ul class="list-unstyled">
+                            <li class="media my-4" done="true">
+                                <div name="status"></div>
+                                <div class="media-body">
+                                    <div name="text">&nbsp;
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad assumenda at atque aut consequuntur, cumque dolores esse et excepturi exercitationem impedit labore, libero magnam modi non sit sunt vel.
+                                    </div>
+                                    <div>
+                                        <hr class="my-1">
+                                        <div class="row justify-content-end">
+                                            <div name="time" >[13:00]</div>
+                                            <div name="trash" ></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="media my-4" done="false">
+                                <div name="status"></div>
+                                <div class="media-body">
+                                    <div name="text">&nbsp;
+                                        todolist
+                                       </div>
+                                    <div>
+                                        <hr class="my-1">
+                                        <div class="row justify-content-end">
+                                            <div name="time" >[15:00]</div>
+                                            <div name="trash" ></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>-->
 
         </div>
     </div>

@@ -70,3 +70,42 @@ div[name="text"] {
     word-break: break-all;
     cursor: text;
 }
+
+div[name="time"] {
+    color: #e4e3e3;
+}
+div[name="trash"] {
+    cursor: pointer;
+    width: 3.4em;
+    height: 1.2em;
+    margin-left: 0.5em ;
+    margin-top: 0.1em;
+    background-image: url(../img/trash.svg);
+    background-repeat: no-repeat;
+}
+
+li[done="false"] div[name="status"] {
+     cursor: pointer;
+     width: 3em; height: 2em;
+     background-image: url(../img/circle.svg);
+     background-repeat: no-repeat;
+}
+
+li[done="false"] div[name="text"] {
+    text-decoration: none;
+}
+
+li[done="true"] div[name="status"] {
+    cursor: pointer;
+    width: 3em; height: 2em;
+    background-image: url(../img/circle-fill.svg);
+    background-repeat: no-repeat;
+}
+
+li[done="true"] div[name="text"] {
+    text-decoration: line-through;
+}
+
+#newtask {
+    cursor: pointer;
+}
