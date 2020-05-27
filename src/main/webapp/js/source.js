@@ -4,13 +4,18 @@ var count_open = 0;
 //when write text
 $('#todo').on("click", 'div[name="text"]', function (data) {
     $(this).prop('contenteditable', true);
-}).on('keypress','div[name="text"]', function (e) {
+}).on('keydown','div[name="text"]', function (e) {
     if (e.which == 13 && !e.shiftKey) {
-        console.log('type');
         if ($(this).html().length == 0) {
             $(this).html("\xa0");
         }
         $(this).prop('contenteditable', false);
+        let nt = newtask();
+        let li = $(this).parents('li');
+        li.after(nt);
+        $(li.next(li)).find('div[name="text"]')
+            .prop('contenteditable', true).focus();
+        return false;
     }
 }).on('focusout','div[name="text"]', function (data) {
     if ($(this).html().length == 0) {
@@ -27,12 +32,13 @@ $('#todo').on('click', 'div[name="status"]', function () {
     if (li.attr('done') == 'true') {
         li.attr('done', 'false');
         li.removeClass('d-none');
+        li.find("div[name='completed']").html("--:--");
         $('#count_done').html(--count_done);
         $('#count_open').html(++count_open);
 
     } else {
         li.attr('done', 'true');
-        console.log(checked);
+        li.find("div[name='completed']").html(get_current_time());
         if(!checked) {
             li.addClass('d-none');
         }
@@ -72,26 +78,43 @@ $('#show_completed').on('click', function () {
     }
 });
 
+
 //when click "new task"
 $('#newtask').on('click', function () {
-    console.log("click");
-    let date = new Date();
-    let time = (date.getHours() < 10 ? '0' : '') + date.getHours() + ":"
-        + (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
-    let data = {desc: '\xa0', created: time, done: 'false'}
-    $('#todo').prepend(task(data));
+    let nt = newtask();
+    $('#todo ul').prepend(nt);
+    $("#todo li:first-child div[name='text']").prop('contenteditable', true).focus();
+
 });
+
+//when click "new todolist"
+$("#newtodo").on('click', function () {
+    $('#todo ul').html("");
+    count_done = 0;
+    count_open = 0;
+    $('#count_done').html(0);
+    $('#count_open').html(0);
+});
+
+function newtask() {
+    console.log("click");
+    let time = get_current_time();
+    let data = {desc: '\xa0', created: time, completed: "--:--", done: 'false'};
+    return task(data);
+}
+
 
 //create new task
 function task(data) {
     let li = `<li class="media mt-3" done="${data.done}">
                     <div name="status"></div>
                     <div class="media-body">
-                        <div name="text">${data.desc}</div>
+                        <div name="text"><h6>${data.desc}</h6></div>
                         <div>
                             <hr class="my-1">
                             <div class="row justify-content-end">
-                                <div name="time" >[${data.created}]</div>
+                                <div name="created" >${data.created} → </div>
+                                &nbsp;<div name="completed" >${data.completed}</div>
                                 <div name="trash" ></div>
                             </div>
                         </div>
@@ -105,25 +128,29 @@ function task(data) {
     return li;
 }
 
+function get_current_time() {
+    let date = new Date();
+   return (date.getHours() < 10 ? '0' : '') + date.getHours() + ":"
+    + (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+}
+
 function make_todolist(data) {
-    let ul = $('#todo');
-    ul.append(`<ul class="list-unstyled">`);
+    let div = $('#todo');
+    div.html(`<ul class="list-unstyled"></ul>`);
+    let ul = div.find('ul');
     for (i = 0; i < data.length; i++) {
         ul.append(task(data[i]));
     }
-    ul.append(`</ul>`);
 }
 
 
 
 //data = {desc: 'some text', created: '[14:34]', done: 'false'}
 var data = [
-    {desc: "some text1", created: "14:34", done: 'false'},
-    {desc: "some text2", created: "15:24", done: 'false'},
-    {desc: "some text3", created: "17:35", done: 'true'}
+    {desc: "some text1", created: "14:34", completed: "--:--", done: 'false'},
+    {desc: "some text2", created: "15:24", completed: "--:--", done: 'false'},
+    {desc: "some text3", created: "17:35", completed: "--:--", done: 'true'}
 ];
 
 
 make_todolist(data);
-
-

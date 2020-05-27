@@ -75,8 +75,13 @@ div[name="text"] {
     cursor: text;
 }
 
-div[name="time"] {
+div[name="created"], div[name="completed"] {
     color: #e4e3e3;
+    outline: 0px solid transparent;
+}
+
+[contenteditable] {
+    outline: 0px solid transparent;
 }
 div[name="trash"] {
     cursor: pointer;
@@ -114,13 +119,20 @@ li[done="true"] div[name="text"] {
     cursor: pointer;
 }
 
-/*@media all and (min-height: 500px ) {*/
-    footer {
-        position:fixed;
-        bottom:15px;
-        left:0;
-        right:0;
+footer {
+    position:fixed;
+    bottom:15px;
+    left:0;
+    right:0;
 
-    }
-/*
-}*/
+}
+
+a {
+    border-bottom: 1px solid #ffffff;
+}
+
+a:hover {
+    text-decoration-line: none;
+    color: #FFFFFF;
+    text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+}

@@ -22,40 +22,64 @@
         <div class="col-lg-9 mx-auto text-white text-center">
             <h2 class="display-4">Todolist <span class="badge badge-secondary">ik87</span></h2>
             <hr>
-            <div class="mt-2">
-                <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="show_completed" checked>
-                    <label class="form-check-label" style="text-align: left"
-                           for="show_completed">show completed tasks</label>
-                </div>
-
-            </div>
-            <div> done <span id="count_done" class="badge badge-light">0</span>
-                | open <span id="count_open" class="badge badge-light">0</span></div>
         </div>
     </div>
-
-    <div class="row my-4">
+    <!--btn new todolist-->
+    <div class="row">
         <div class="mx-auto">
             <div class="media">
-                <div id="newtask" class="row">
+                <div id="newtodo" class="row">
                     <img src="img/writing-tool.svg" class="align-self-center mr-1" style="height: 2em">
                     <div class="media-body">
-                        <h5 class="mt-2" style="color: #e4e3e3">NEW TASK</h5>
+                        <h5 class="mt-2" style="color: #e4e3e3">NEW TODOLIST</h5>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <!--checkbox show completed task-->
+    <div class="row mt-4">
+        <div class="mx-auto">
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="show_completed" checked>
+                <label class="form-check-label" style="text-align: left"
+                       for="show_completed">show completed tasks</label>
+            </div>
+        </div>
+    </div>
+    <!--count-->
     <div class="row">
-        <div id="todo" class="col-lg-9 mx-auto mb-5">
+        <div class="mx-auto">
+            <div> done <span id="count_done" class="badge badge-light">0</span>
+                | open <span id="count_open" class="badge badge-light">0</span></div>
+        </div>
+    </div>
+    <!--new task-->
+    <div id="newtask" class="row mt-2">
+        <div class="col-lg-9 mx-auto">
+            <ul class="list-unstyled">
+                <li class="media mt-3">
+                    <img src="img/circle-new.svg" class="align-self-center mr-3" style="height: 2em;">
+                    <div class="media-body">
+                        <div style="color: rgba(255, 255, 255, 0.5)" >make homework...</div>
+                        <div>
+                            <hr class="my-1">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--ul list-->
+    <div class="row">
+        <div id="todo" class="col-lg-9 mx-auto   mb-5">
         </div>
     </div>
     <!--footer-->
     <footer class="page-footer font-small purple mt-2">
         <!-- Copyright -->
-        <div class="footer-copyright text-center text-white" >© ik87 | 2020 |
-            <a href="https://github.com/ik87/job4j_cinema">source</a>
+        <div class="footer-copyright text-center text-white">© ik87 | 2020 |
+            <a  class="text-white" href="https://github.com/ik87/job4j_cinema">source</a>
         </div>
         <!-- Copyright -->
     </footer>
