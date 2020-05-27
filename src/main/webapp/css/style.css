@@ -65,6 +65,10 @@ label.form-check-label {
 
 }
 
+#count_done, #count_open {
+    font-size: 0.9em;
+}
+
 div[name="text"] {
     min-width: 100px;
     word-break: break-all;
@@ -109,3 +113,14 @@ li[done="true"] div[name="text"] {
 #newtask {
     cursor: pointer;
 }
+
+/*@media all and (min-height: 500px ) {*/
+    footer {
+        position:fixed;
+        bottom:15px;
+        left:0;
+        right:0;
+
+    }
+/*
+}*/

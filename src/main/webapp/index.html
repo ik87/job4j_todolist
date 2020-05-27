@@ -24,12 +24,14 @@
             <hr>
             <div class="mt-2">
                 <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="show_completed">
+                    <input type="checkbox" class="form-check-input" id="show_completed" checked>
                     <label class="form-check-label" style="text-align: left"
                            for="show_completed">show completed tasks</label>
                 </div>
 
             </div>
+            <div> done <span id="count_done" class="badge badge-light">0</span>
+                | open <span id="count_open" class="badge badge-light">0</span></div>
         </div>
     </div>
 
@@ -46,44 +48,17 @@
         </div>
     </div>
     <div class="row">
-        <div id="todo" class="col-lg-9 mx-auto">
-            <!-- media object -->
-
-            <!--            <ul class="list-unstyled">
-                            <li class="media my-4" done="true">
-                                <div name="status"></div>
-                                <div class="media-body">
-                                    <div name="text">&nbsp;
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad assumenda at atque aut consequuntur, cumque dolores esse et excepturi exercitationem impedit labore, libero magnam modi non sit sunt vel.
-                                    </div>
-                                    <div>
-                                        <hr class="my-1">
-                                        <div class="row justify-content-end">
-                                            <div name="time" >[13:00]</div>
-                                            <div name="trash" ></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="media my-4" done="false">
-                                <div name="status"></div>
-                                <div class="media-body">
-                                    <div name="text">&nbsp;
-                                        todolist
-                                       </div>
-                                    <div>
-                                        <hr class="my-1">
-                                        <div class="row justify-content-end">
-                                            <div name="time" >[15:00]</div>
-                                            <div name="trash" ></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>-->
-
+        <div id="todo" class="col-lg-9 mx-auto mb-5">
         </div>
     </div>
+    <!--footer-->
+    <footer class="page-footer font-small purple mt-2">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center text-white" >© ik87 | 2020 |
+            <a href="https://github.com/ik87/job4j_cinema">source</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 </div>
 
 <!-- Optional JavaScript -->
