@@ -38,7 +38,8 @@ $('#todo').on('click', 'div[name="status"]', function () {
 
     } else {
         li.attr('done', 'true');
-        li.find("div[name='completed']").html(get_current_time());
+        let time = get_current_time();
+        li.find("div[name='completed']").html( format_time(time));
         if(!checked) {
             li.addClass('d-none');
         }
@@ -97,7 +98,6 @@ $("#newtodo").on('click', function () {
 });
 
 function newtask() {
-    console.log("click");
     let time = get_current_time();
     let data = {desc: '\xa0', created: time, completed: "--:--", done: 'false'};
     return task(data);
@@ -113,8 +113,8 @@ function task(data) {
                         <div>
                             <hr class="my-1">
                             <div class="row justify-content-end">
-                                <div name="created" >${data.created} → </div>
-                                &nbsp;<div name="completed" >${data.completed}</div>
+                                <div name="created" >${format_time(data.created)} → </div>
+                                &nbsp;<div name="completed" >${format_time(data.completed)}</div>
                                 <div name="trash" ></div>
                             </div>
                         </div>
@@ -129,9 +129,15 @@ function task(data) {
 }
 
 function get_current_time() {
-    let date = new Date();
-   return (date.getHours() < 10 ? '0' : '') + date.getHours() + ":"
-    + (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+   return  moment().format();
+}
+
+function format_time(time) {
+    let result = moment(time).format("HH:mm");
+    if( result == "Invalid date") {
+        result = "--:--"
+    }
+    return result;
 }
 
 function make_todolist(data) {
@@ -147,9 +153,9 @@ function make_todolist(data) {
 
 //data = {desc: 'some text', created: '[14:34]', done: 'false'}
 var data = [
-    {desc: "some text1", created: "14:34", completed: "--:--", done: 'false'},
-    {desc: "some text2", created: "15:24", completed: "--:--", done: 'false'},
-    {desc: "some text3", created: "17:35", completed: "--:--", done: 'true'}
+    {desc: "some text1", created: "2020-06-01T19:38:22+03:00", completed: "--:--", done: 'false'},
+    {desc: "some text2", created: "2020-06-01T14:33:22+03:00", completed: "--:--", done: 'false'},
+    {desc: "some text3", created: "2020-06-01T16:12:22+03:00", completed: "--:--", done: 'true'}
 ];
 
 
