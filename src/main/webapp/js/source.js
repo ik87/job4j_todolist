@@ -97,6 +97,11 @@ $("#newtodo").on('click', function () {
     $('#count_open').html(0);
 });
 
+//when click "new todolist"
+$("#signin").on('click', function () {
+    $("#signinModal").modal('show');
+});
+
 function newtask() {
     let time = get_current_time();
     let data = {desc: '\xa0', created: time, completed: "--:--", done: 'false'};
@@ -160,3 +165,12 @@ var data = [
 
 
 make_todolist(data);
+
+$(function () {
+    $('input, select').on('focus', function () {
+        $(this).parent().find('.input-group-text').css('border-color', '#80bdff');
+    });
+    $('input, select').on('blur', function () {
+        $(this).parent().find('.input-group-text').css('border-color', '#ced4da');
+    });
+})

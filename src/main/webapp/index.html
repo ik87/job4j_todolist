@@ -12,26 +12,35 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Hello, world!</title>
+    <title>todo</title>
 </head>
 <body>
 
 <div class="container">
     <!--Title-->
-    <div class="row pt-5">
+    <div class="row pt-1">
         <div class="col-lg-9 mx-auto text-white text-center">
             <h2 class="display-4">Todolist <span class="badge badge-secondary">ik87</span></h2>
             <hr>
         </div>
     </div>
+
     <!--btn new todolist-->
     <div class="row">
         <div class="mx-auto">
-            <div class="media">
+            <div class="media float-left">
                 <div id="newtodo" class="row">
                     <img src="img/writing-tool.svg" class="align-self-center mr-1" style="height: 2em">
                     <div class="media-body">
-                        <h5 class="mt-2" style="color: #e4e3e3">NEW TODOLIST</h5>
+                        <h5 class="mt-2" style="color: #e4e3e3">NEW TODO</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="media pl-5">
+                <div id="signin" class="row">
+                    <img src="img/signin.svg" class="align-self-center mr-1" style="height: 2em">
+                    <div class="media-body">
+                        <h5 class="mt-2" style="color: #e4e3e3">SIGN IN</h5>
                     </div>
                 </div>
             </div>
@@ -51,7 +60,8 @@
     <div class="row">
         <div class="mx-auto">
             <div> done <span id="count_done" class="badge badge-light">0</span>
-                | open <span id="count_open" class="badge badge-light">0</span></div>
+                | open <span id="count_open" class="badge badge-light">0</span>
+            </div>
         </div>
     </div>
     <!--new task-->
@@ -61,7 +71,7 @@
                 <li class="media mt-3">
                     <img src="img/circle-new.svg" class="align-self-center mr-3" style="height: 2em;">
                     <div class="media-body">
-                        <div style="color: rgba(255, 255, 255, 0.5)" >make homework...</div>
+                        <div style="color: rgba(255, 255, 255, 0.5)">make homework...</div>
                         <div>
                             <hr class="my-1">
                         </div>
@@ -75,11 +85,80 @@
         <div id="todo" class="col-lg-9 mx-auto   mb-5">
         </div>
     </div>
+
+    <!-- Sign in modal -->
+    <div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sign in</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="row">
+
+                            <!-- Social Login -->
+                            <div class="form-group col-lg-12 mx-auto">
+                                <a href="#" class="btn btn-primary btn-block py-2 btn-facebook">
+                                    <i class="fa fa-facebook-f mr-2"></i>
+                                    <span class="font-weight-bold">Continue with Facebook</span>
+                                </a>
+                                <a href="#" class="btn  btn-block py-2 btn-google">
+                                    <img src="img/google.svg">
+                                    <span class="font-weight-bolder">Continue with Google</span>
+                                </a>
+                            </div>
+
+                            <!-- Divider Text -->
+                            <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+                                <div class="border-bottom w-100 ml-5"></div>
+                                <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
+                                <div class="border-bottom w-100 mr-5"></div>
+                            </div>
+
+                            <!-- Email Address -->
+                            <div class="input-group col-lg-12 mb-4">
+                                <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-envelope text-muted"></i>
+                            </span>
+                                </div>
+                                <input id="email" type="email" name="email" placeholder="Email Address"
+                                       class="form-control bg-white border-left-0 border-md">
+                            </div>
+                            <!-- Password -->
+                            <div class="input-group col-lg-12 mb-4">
+                                <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                                </div>
+                                <input id="password" type="password" name="password" placeholder="Password"
+                                       class="form-control bg-white border-left-0 border-md">
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="form-group col-lg-12 mx-auto mb-0">
+                                <a href="#" class="btn btn-primary btn-block py-2">
+                                    <span class="font-weight-bold">Login | Create your account</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!--footer-->
     <footer class="page-footer font-small purple mt-2">
         <!-- Copyright -->
         <div class="footer-copyright text-center text-white">© ik87 | 2020 |
-            <a  class="text-white" href="https://github.com/ik87/job4j_cinema">source</a>
+            <a class="text-white" href="https://github.com/ik87/job4j_cinema">source</a>
         </div>
         <!-- Copyright -->
     </footer>
@@ -99,6 +178,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <script src="js/source.js"></script>
 </body>
 </html>
