@@ -8,62 +8,57 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 
     <title>todo</title>
 </head>
 <body>
-
-<div class="container">
-    <!--Title-->
-    <div class="row pt-1">
-        <div class="col-lg-9 mx-auto text-white text-center">
-            <h2 class="display-4">Todolist <span class="badge badge-secondary">ik87</span></h2>
-            <hr>
+<!--nav bar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" >
+    <span class="navbar-text mx-auto">
+        <h2 class="text-white display-4" ><span>Todolist</span> <span class="badge badge-secondary">ik87</span></h2>
+    </span>
+    <!--count-->
+    <div class="text-white mx-auto ml-lg-5 "  >
+        <div > done <span id="count_done" class="badge badge-light">0</span>
+            | open <span id="count_open" class="badge badge-light">0</span>
         </div>
     </div>
-
-    <!--btn new todolist-->
-    <div class="row">
-        <div class="mx-auto">
-            <div class="media float-left">
-                <div id="newtodo" class="row">
-                    <img src="img/writing-tool.svg" class="align-self-center mr-1" style="height: 2em">
-                    <div class="media-body">
-                        <h5 class="mt-2" style="color: #e4e3e3">NEW TODO</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="media pl-5">
-                <div id="signin" class="row">
-                    <img src="img/signin.svg" class="align-self-center mr-1" style="height: 2em">
-                    <div class="media-body">
-                        <h5 class="mt-2" style="color: #e4e3e3">SIGN IN</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--checkbox show completed task-->
-    <div class="row mt-4">
-        <div class="mx-auto">
+    <!--show complete task-->
+        <div class="mx-auto ml-lg-5 mt-3" >
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="show_completed" checked>
-                <label class="form-check-label" style="text-align: left"
+                <label class="form-check-label text-white" style="text-align: left; font-size: 1.1em"
                        for="show_completed">show completed tasks</label>
             </div>
         </div>
+    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <hr class="border-white">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                    <span id="newtodo" class="row mx-auto mx-lg-3">
+                    <img src="img/writing-tool.svg" class="align-self-center mr-1" style="height: 2em">
+                    <div class="media-body">
+                    <h5 class="mt-2" style="color: #e4e3e3">NEW TODO</h5>
+                    </div>
+                    </span>
+            </li>
+            <li class="nav-item">
+                    <span id="signin" class="row mx-auto  mx-lg-3 my-2 my-lg-0">
+                    <img src="img/signin.svg" class="align-self-center mr-1" style="height: 2em">
+                    <div class="media-body">
+                    <h5 class="mt-2" style="color: #e4e3e3">SIGN IN</h5>
+                    </div>
+                    </span>
+            </li>
+        </ul>
     </div>
-    <!--count-->
-    <div class="row">
-        <div class="mx-auto">
-            <div> done <span id="count_done" class="badge badge-light">0</span>
-                | open <span id="count_open" class="badge badge-light">0</span>
-            </div>
-        </div>
-    </div>
+</nav>
+<div class="container">
     <!--new task-->
     <div id="newtask" class="row mt-2">
         <div class="col-lg-9 mx-auto">
@@ -73,7 +68,7 @@
                     <div class="media-body">
                         <div style="color: rgba(255, 255, 255, 0.5)">make homework...</div>
                         <div>
-                            <hr class="my-1">
+                            <hr class="my-1" style="border-color: rgba(255, 255, 255, 0.5)">
                         </div>
                     </div>
                 </li>
@@ -154,17 +149,16 @@
         </div>
     </div>
 
-    <!--footer-->
-    <footer class="page-footer font-small purple mt-2">
-        <!-- Copyright -->
-        <div class="footer-copyright text-center text-white">© ik87 | 2020 |
-            <a class="text-white" href="https://github.com/ik87/job4j_cinema">source</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
 </div>
 
-
+<nav class="navbar fixed-bottom position-sticky navbar-light bg-light "  >
+    <!--footer-->
+    <span class="navbar-text mx-auto">
+    <div class="footer-copyright text-center text-white">© ik87 | 2020 |
+        <a class="text-white" href="https://github.com/ik87/job4j_cinema">source</a>
+    </div>
+    </span>
+</nav>
 <!-- Optional JavaScript -->
 <!--Time formatting-->
 <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
@@ -179,6 +173,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 <script src="js/source.js"></script>
 </body>

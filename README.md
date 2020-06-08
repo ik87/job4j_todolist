@@ -37,6 +37,20 @@ SVG img
 Bootstrap UI credit card
 - https://bootstrapious.com/p/bootstrap-credit-card-form
 
+Problems with Fonts
+- https://fontsforyou.com/
+- https://css-tricks.com/snippets/css/using-font-face/
+- http://www.font2web.com/
+
+Backgrounds
+- https://wallpaperaccess.com/80s-desktop
+
+Sticky Footer
+- https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+
+Scroll Automatically to the Bottom of the Page
+- https://stackoverflow.com/questions/11715646/scroll-automatically-to-the-bottom-of-the-page
+
 Long polling
 - https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/async-servlet/async-servlets.html
 - https://gist.github.com/ngugijames/c3eaf929f3512def986b

@@ -4,6 +4,7 @@ var count_open = 0;
 //when write text
 $('#todo').on("click", 'div[name="text"]', function (data) {
     $(this).prop('contenteditable', true);
+
 }).on('keydown','div[name="text"]', function (e) {
     if (e.which == 13 && !e.shiftKey) {
         if ($(this).html().length == 0) {
@@ -15,12 +16,17 @@ $('#todo').on("click", 'div[name="text"]', function (data) {
         li.after(nt);
         $(li.next(li)).find('div[name="text"]')
             .prop('contenteditable', true).focus();
+        //check if it pre last li
+        if(li.is(":nth-last-child(2)")){
+            window.scrollTo(0,document.body.scrollHeight );
+        }
         return false;
     }
 }).on('focusout','div[name="text"]', function (data) {
     if ($(this).html().length == 0) {
         $(this).html("\xa0");
     }
+
     $(this).prop('contenteditable', false);
 });
 
@@ -116,7 +122,7 @@ function task(data) {
                     <div class="media-body">
                         <div name="text"><h6>${data.desc}</h6></div>
                         <div>
-                            <hr class="my-1">
+                            <hr class="my-1 border-white">
                             <div class="row justify-content-end">
                                 <div name="created" >${format_time(data.created)} → </div>
                                 &nbsp;<div name="completed" >${format_time(data.completed)}</div>
