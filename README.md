@@ -51,6 +51,9 @@ Sticky Footer
 Scroll Automatically to the Bottom of the Page
 - https://stackoverflow.com/questions/11715646/scroll-automatically-to-the-bottom-of-the-page
 
+Old style terminal
+- https://css-tricks.com/old-timey-terminal-styling/
+
 Long polling
 - https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/async-servlet/async-servlets.html
 - https://gist.github.com/ngugijames/c3eaf929f3512def986b

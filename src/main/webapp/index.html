@@ -14,8 +14,9 @@
     <title>todo</title>
 </head>
 <body>
+
 <!--nav bar-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" >
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top position-sticky noselect " >
     <span class="navbar-text mx-auto">
         <h2 class="text-white display-4" ><span>Todolist</span> <span class="badge badge-secondary">ik87</span></h2>
     </span>
@@ -43,7 +44,7 @@
                     <span id="newtodo" class="row mx-auto mx-lg-3">
                     <img src="img/writing-tool.svg" class="align-self-center mr-1" style="height: 2em">
                     <div class="media-body">
-                    <h5 class="mt-2" style="color: #e4e3e3">NEW TODO</h5>
+                    <h5 class="mt-2 " style="color: #e4e3e3">NEW TODO</h5>
                     </div>
                     </span>
             </li>
@@ -51,7 +52,7 @@
                     <span id="signin" class="row mx-auto  mx-lg-3 my-2 my-lg-0">
                     <img src="img/signin.svg" class="align-self-center mr-1" style="height: 2em">
                     <div class="media-body">
-                    <h5 class="mt-2" style="color: #e4e3e3">SIGN IN</h5>
+                    <h5 class="mt-2 " style="color: #e4e3e3">SIGN IN</h5>
                     </div>
                     </span>
             </li>
@@ -66,7 +67,7 @@
                 <li class="media mt-3">
                     <img src="img/circle-new.svg" class="align-self-center mr-3" style="height: 2em;">
                     <div class="media-body">
-                        <div style="color: rgba(255, 255, 255, 0.5)">make homework...</div>
+                        <div class="noselect" style="color: rgba(255, 255, 255, 0.5)">make homework...</div>
                         <div>
                             <hr class="my-1" style="border-color: rgba(255, 255, 255, 0.5)">
                         </div>
@@ -150,8 +151,7 @@
     </div>
 
 </div>
-
-<nav class="navbar fixed-bottom position-sticky navbar-light bg-light "  >
+<nav class="navbar fixed-bottom position-sticky navbar-light bg-light noselect "  >
     <!--footer-->
     <span class="navbar-text mx-auto">
     <div class="footer-copyright text-center text-white">© ik87 | 2020 |
@@ -176,5 +176,6 @@
 
 
 <script src="js/source.js"></script>
+
 </body>
 </html>

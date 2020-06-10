@@ -120,7 +120,7 @@ function task(data) {
     let li = `<li class="media mt-3" done="${data.done}">
                     <div name="status"></div>
                     <div class="media-body">
-                        <div name="text"><h6>${data.desc}</h6></div>
+                        <div name="text">${data.desc}</div>
                         <div>
                             <hr class="my-1 border-white">
                             <div class="row justify-content-end">
