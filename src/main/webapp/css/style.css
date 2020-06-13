@@ -63,6 +63,7 @@ body {
 /*   background-image: url("../background/zvezdy-kosmos-prostranstvo-ellen-ripli-chuzhoi.jpg");*/
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
 
 
     font: 1rem Inconsolata, monospace;
@@ -219,9 +220,6 @@ li[done="false"] div[name="text"] {
 }
 
 
-#newtask {
-    cursor: pointer;
-}
 
 footer {
     position:fixed;
@@ -276,9 +274,11 @@ select.form-control {
 }
 
 .navbar {
+
     padding-bottom: 0rem;
     padding-top: 0rem;
     background-color: rgba(52, 58, 64, 0.7) !important;
+
 }
 
 .navbar-text h2 {
@@ -300,4 +300,34 @@ select.form-control {
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+}
+
+#newtask {
+    cursor: pointer;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

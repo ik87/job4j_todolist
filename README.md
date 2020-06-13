@@ -1,5 +1,4 @@
-#  Выбор места в кинотеатре
-![Heroku](https://todolist-job4j.herokuapp.com/?app=todolist-job4j&style=flat&svg=1)
+#  Retro Todo list
 пет-проект "TODO list"
  * демонстрация:  https://todolist-job4j.herokuapp.com/
 ### Использованные средства:
@@ -17,10 +16,6 @@
 
 Get a list of all HttpSession objects in a web application
 - https://stackoverflow.com/a/3771134/5984851
-
-Detect browser or tab closing
-- https://stackoverflow.com/questions/3888902/detect-browser-or-tab-closing
-- https://stackoverflow.com/a/20853978/5984851
 
 Reloading a page when using browser back button
 - https://stackoverflow.com/questions/43043113/how-to-force-reloading-a-page-when-using-browser-back-button
@@ -53,6 +48,9 @@ Scroll Automatically to the Bottom of the Page
 
 Old style terminal
 - https://css-tricks.com/old-timey-terminal-styling/
+
+Fixed position
+- https://coderwall.com/p/fquq_q/center-a-fixed-div-without-width
 
 Long polling
 - https://www.oracle.com/webfolder/technetwork/tutorials/obe/java/async-servlet/async-servlets.html

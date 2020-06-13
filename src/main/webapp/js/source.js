@@ -3,9 +3,11 @@ var count_open = 0;
 
 //when write text
 $('#todo').on("click", 'div[name="text"]', function (data) {
-    $(this).prop('contenteditable', true);
+    $(this).prop('contenteditable', true).focus();
+
 
 }).on('keydown','div[name="text"]', function (e) {
+
     if (e.which == 13 && !e.shiftKey) {
         if ($(this).html().length == 0) {
             $(this).html("\xa0");
@@ -13,15 +15,23 @@ $('#todo').on("click", 'div[name="text"]', function (data) {
         $(this).prop('contenteditable', false);
         let nt = newtask();
         let li = $(this).parents('li');
+        console.log(li)
         li.after(nt);
         $(li.next(li)).find('div[name="text"]')
             .prop('contenteditable', true).focus();
-        //check if it pre last li
-        if(li.is(":nth-last-child(2)")){
-            window.scrollTo(0,document.body.scrollHeight );
-        }
+        window.scrollTo(0,document.body.scrollHeight );
         return false;
     }
+//not work yet
+/*   let liPos = $(this)[0].getBoundingClientRect().bottom + $(window)['scrollTop']();
+    let newtaskPos = $("#newtask")[0].getBoundingClientRect().top + $(window)['scrollTop']();
+    console.log(liPos);
+    console.log(newtaskPos);
+    if(liPos > newtaskPos) {
+        window.scrollTo(0,newtaskPos );
+    }*/
+
+
 }).on('focusout','div[name="text"]', function (data) {
     if ($(this).html().length == 0) {
         $(this).html("\xa0");
@@ -89,10 +99,12 @@ $('#show_completed').on('click', function () {
 //when click "new task"
 $('#newtask').on('click', function () {
     let nt = newtask();
-    $('#todo ul').prepend(nt);
-    $("#todo li:first-child div[name='text']").prop('contenteditable', true).focus();
+    $('#todo ul').append(nt);
+    $("#todo li:last-child div[name='text']").prop('contenteditable', true).focus();
+    window.scrollTo(0,document.body.scrollHeight);
 
 });
+
 
 //when click "new todolist"
 $("#newtodo").on('click', function () {
@@ -101,6 +113,7 @@ $("#newtodo").on('click', function () {
     count_open = 0;
     $('#count_done').html(0);
     $('#count_open').html(0);
+
 });
 
 //when click "new todolist"
@@ -114,6 +127,18 @@ function newtask() {
     return task(data);
 }
 
+var lastScrollTop = 0;
+$(window).scroll(function(event){
+    var st = $(this).scrollTop();
+    if (st > lastScrollTop){
+        // downscroll code
+        $('#newtask').css({ opacity: 0.1 });
+    } else {
+        $('#newtask').css({ opacity: 1 });
+        // upscroll code
+    }
+    lastScrollTop = st;
+});
 
 //create new task
 function task(data) {
@@ -180,3 +205,19 @@ $(function () {
         $(this).parent().find('.input-group-text').css('border-color', '#ced4da');
     });
 })
+
+/*
+let was_above = false;
+function intersection(entries, observer) {
+    entries.forEach(entry => {
+        const isAbove = entry.boundingClientRect.y < entry.rootBounds.y;
+
+        if (entry.isIntersecting) {
+            if (was_above) {
+                // Comes from top
+            }
+        }
+
+        was_above = isAbove;
+    });
+}*/
