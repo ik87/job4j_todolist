@@ -1,10 +1,9 @@
 var count_done = 0;
 var count_open = 0;
-
+var show_completed = true;
 //when write text
 $('#todo').on("click", 'div[name="text"]', function (data) {
     $(this).prop('contenteditable', true).focus();
-    $('#newtask').css({ bottom: "-100px" });
 }).on('keydown','div[name="text"]', function (e) {
 
     if (e.which == 13 && !e.shiftKey) {
@@ -28,14 +27,11 @@ $('#todo').on("click", 'div[name="text"]', function (data) {
     }
 
     $(this).prop('contenteditable', false);
-    $('#newtask').css({ bottom: "10px" });
-
 });
 
 //when click on status
 $('#todo').on('click', 'div[name="status"]', function () {
     let li = $(this).parent();
-    let checked = $('#show_completed'). is(":checked");
 
     if (li.attr('done') == 'true') {
         li.attr('done', 'false');
@@ -48,7 +44,7 @@ $('#todo').on('click', 'div[name="status"]', function () {
         li.attr('done', 'true');
         let time = get_current_time();
         li.find("div[name='completed']").html( format_time(time));
-        if(!checked) {
+        if(!show_completed) {
             li.addClass('d-none');
         }
         $('#count_done').html(++count_done);
@@ -67,24 +63,27 @@ $('#todo').on('click', 'div[name="trash"]', function () {
         $('#count_open').html(--count_open);
     }
     li.remove();
-    $('#newtask').css({ bottom: "10px" });
+    show_nav();
 });
 
 //when set checkbox 'show completed tasks'
 $('#show_completed').on('click', function () {
-    if(!$('#show_completed'). is(":checked")){
+    show_completed = !show_completed;
+
+    if(!show_completed){
         $('#todo li').map(function () {
             if($(this).attr('done') == 'true') {
                 $(this).addClass('d-none');
             }
         })
+        $('#show_completed').attr('src', 'img/lp2.svg');
     } else {
         $('#todo li').map(function () {
             if($(this).attr('done') == 'true') {
                 $(this).removeClass('d-none');
             }
         })
-
+        $('#show_completed').attr('src', 'img/lp_on2.svg');
     }
 });
 
@@ -96,23 +95,24 @@ $('#newtask').on('click', function () {
     $("#todo li:last-child div[name='text']").prop('contenteditable', true).focus();
     window.scrollTo(0,document.body.scrollHeight);
 
+
 });
 
 
 //when click "new todolist"
 $("#newtodo").on('click', function () {
+    show_nav();
     $('#todo ul').html("");
     count_done = 0;
     count_open = 0;
     $('#count_done').html(0);
     $('#count_open').html(0);
-    $('#newtask').css({ bottom: "10px" });
-
 });
 
 //when click "new todolist"
 $("#signin").on('click', function () {
     $("#signinModal").modal('show');
+    show_nav();
 });
 
 function newtask() {
@@ -122,18 +122,31 @@ function newtask() {
 }
 
 //when scroll
-var lastScrollTop = 0;
+var last_scroll_top = 0;
 $(window).scroll(function(event){
     var st = $(this).scrollTop();
-    if (st > lastScrollTop){
+    if (st > last_scroll_top){
         // downscroll code
-        $('#newtask').css({ bottom: "10px" });
+        show_nav();
     } else {
-        $('#newtask').css({ bottom: "-100px" });
+        hide_nav();
         // upscroll code
     }
-    lastScrollTop = st;
+    last_scroll_top = st;
 });
+
+
+function show_nav() {
+    $('#newtask').css({ bottom: "-25px" });
+    $('#bottom_nav').css({ bottom: "0px" });
+
+}
+
+function hide_nav() {
+    $('#newtask').css({ bottom: "-100px" });
+    $('#bottom_nav').css({ bottom: "-100px" });
+}
+
 //create new task
 function task(data) {
     let li = `<li class="media mt-3" done="${data.done}">
@@ -197,13 +210,3 @@ $(function () {
         $(this).parent().find('.input-group-text').css('border-color', '#ced4da');
     });
 })
-
-/* Set the width of the sidebar to 250px (show it) */
-function openNav() {
-    document.getElementById("mySidepanel").style.width = "250px";
-}
-
-/* Set the width of the sidebar to 0 (hide it) */
-function closeNav() {
-    document.getElementById("mySidepanel").style.width = "0";
-}
