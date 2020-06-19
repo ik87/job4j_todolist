@@ -4,8 +4,7 @@ var count_open = 0;
 //when write text
 $('#todo').on("click", 'div[name="text"]', function (data) {
     $(this).prop('contenteditable', true).focus();
-
-
+    $('#newtask').css({ bottom: "-100px" });
 }).on('keydown','div[name="text"]', function (e) {
 
     if (e.which == 13 && !e.shiftKey) {
@@ -22,15 +21,6 @@ $('#todo').on("click", 'div[name="text"]', function (data) {
         window.scrollTo(0,document.body.scrollHeight );
         return false;
     }
-//not work yet
-/*   let liPos = $(this)[0].getBoundingClientRect().bottom + $(window)['scrollTop']();
-    let newtaskPos = $("#newtask")[0].getBoundingClientRect().top + $(window)['scrollTop']();
-    console.log(liPos);
-    console.log(newtaskPos);
-    if(liPos > newtaskPos) {
-        window.scrollTo(0,newtaskPos );
-    }*/
-
 
 }).on('focusout','div[name="text"]', function (data) {
     if ($(this).html().length == 0) {
@@ -38,6 +28,8 @@ $('#todo').on("click", 'div[name="text"]', function (data) {
     }
 
     $(this).prop('contenteditable', false);
+    $('#newtask').css({ bottom: "10px" });
+
 });
 
 //when click on status
@@ -75,6 +67,7 @@ $('#todo').on('click', 'div[name="trash"]', function () {
         $('#count_open').html(--count_open);
     }
     li.remove();
+    $('#newtask').css({ bottom: "10px" });
 });
 
 //when set checkbox 'show completed tasks'
@@ -113,6 +106,7 @@ $("#newtodo").on('click', function () {
     count_open = 0;
     $('#count_done').html(0);
     $('#count_open').html(0);
+    $('#newtask').css({ bottom: "10px" });
 
 });
 
@@ -127,19 +121,19 @@ function newtask() {
     return task(data);
 }
 
+//when scroll
 var lastScrollTop = 0;
 $(window).scroll(function(event){
     var st = $(this).scrollTop();
     if (st > lastScrollTop){
         // downscroll code
-        $('#newtask').css({ opacity: 0.1 });
+        $('#newtask').css({ bottom: "10px" });
     } else {
-        $('#newtask').css({ opacity: 1 });
+        $('#newtask').css({ bottom: "-100px" });
         // upscroll code
     }
     lastScrollTop = st;
 });
-
 //create new task
 function task(data) {
     let li = `<li class="media mt-3" done="${data.done}">
@@ -185,8 +179,6 @@ function make_todolist(data) {
     }
 }
 
-
-
 //data = {desc: 'some text', created: '[14:34]', done: 'false'}
 var data = [
     {desc: "some text1", created: "2020-06-01T19:38:22+03:00", completed: "--:--", done: 'false'},
@@ -206,18 +198,12 @@ $(function () {
     });
 })
 
-/*
-let was_above = false;
-function intersection(entries, observer) {
-    entries.forEach(entry => {
-        const isAbove = entry.boundingClientRect.y < entry.rootBounds.y;
+/* Set the width of the sidebar to 250px (show it) */
+function openNav() {
+    document.getElementById("mySidepanel").style.width = "250px";
+}
 
-        if (entry.isIntersecting) {
-            if (was_above) {
-                // Comes from top
-            }
-        }
-
-        was_above = isAbove;
-    });
-}*/
+/* Set the width of the sidebar to 0 (hide it) */
+function closeNav() {
+    document.getElementById("mySidepanel").style.width = "0";
+}
