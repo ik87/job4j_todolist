@@ -17,7 +17,8 @@
 <body>
 <!--nav bar logo-->
 <div class="navbar navbar-expand  navbar-dark bg-dark noselect">
-    <div class="mx-auto"><h2 class="text-white display-5" style="font-family: 'Conv_Lazer84'"><span>TODO WAVE</span></h2></div>
+    <div class="mx-auto"><h2 class="text-white display-5" style="font-family: 'Conv_Lazer84'"><span>TODO WAVE</span>
+    </h2></div>
 </div>
 <!--nav bar sticky-->
 <nav id="top_nav" class="navbar navbar-expand-lg fixed-top position-sticky navbar-dark bg-dark noselect">
@@ -27,17 +28,17 @@
             | open <span id="count_open" class="badge badge-light">0</span>
         </div>
     </div>
-        <div  class="mx-auto ml-lg-5 mt-3 ">
-            <div class="form-group form-check">
+    <div class="mx-auto ml-lg-5 mt-3 ">
+        <div class="form-group form-check">
                 <span class="row mx-auto">
-                <img id="show_completed" src="img/lp_on2.svg" class="align-self-center mr-2" style="height: 1.4em">
+                <img id="show_completed" src="img/lp_on2.svg" class="align-self-center mr-2" style="height: 1.3em">
                 <div class="media-body">
-                <h6 class="mt-2 " style="color: #e4e3e3">show completed tasks</h6>
+                <h6 class="mt-2 " style="color: #e4e3e3">show&nbsp;completed&nbsp;tasks</h6>
                 </div>
                 </span>
-            </div>
-
         </div>
+
+    </div>
     </div>
     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,8 +56,8 @@
                     </span>
             </li>
             <li class="nav-item active">
-                    <span id="histroy" class="row mx-auto  mx-lg-3 mt-2 my-lg-0">
-                    <img src="img/history_img.svg" class="align-self-center mr-1" style="height: 1.7em">
+                    <span id="histroy" class="row mx-auto mx-lg-3">
+                    <img src="img/history_img.svg" class="align-self-center mr-1" style="height: 1.6em">
                     <div class="media-body">
                     <h6 class="mt-2 " style="color: #e4e3e3">HISTORY</h6>
                     </div>
@@ -164,13 +165,91 @@
                 </button>
             </div>
             <div class="modal-body">
-               <div id="histroy_todo"></div>
+                <!--<div id="histroy_todo"></div>-->
+                <table class="table table-bordered table-dark">
+                    <thead>
+                    <tr class="bg-success">
+                        <th scope="col" colspan="2" class="col-md-11">04.06.2020</th>
+                        <th scope="col" class="col-md-1"><input type="checkbox"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row" style="width: 1%"><img src="img/circle.svg" style="width: 1.3em"></th>
+                        <td>to do 1</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="img/circle-fill.svg" style="width: 1.3em"></th>
+                        <td style="text-decoration: line-through;">to do 1</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="img/circle.svg" style="height: 1.3em"></th>
+                        <td>to do 1 to do 1 to do 1 to do 1 to do 1 to do 1 to do 1 to do 1 to do 1 to do 1 to do 1 </td>
+                        <td ><input type="checkbox"></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-bordered table-dark">
+                    <thead>
+                    <tr class="bg-success">
+                        <th scope="col" colspan="2" class="col-md-11">04.06.2020</th>
+                        <th scope="col" class="col-md-1"><input type="checkbox"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row" style="width: 1%"><img src="img/circle.svg" style="width: 1.3em"></th>
+                        <td>to do 1</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="img/circle-fill.svg" style="width: 1.3em"></th>
+                        <td style="text-decoration: line-through;">to do 1</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="img/circle.svg" style="width: 1.3em"></th>
+                        <td>to do 1</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-bordered table-dark">
+                    <thead>
+                    <tr class="bg-success">
+                        <th scope="col" colspan="2" class="col-md-11">04.06.2020</th>
+                        <th scope="col" class="col-md-1"><input type="checkbox"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row" style="width: 1%"><img src="img/circle.svg" style="width: 1.3em"></th>
+                        <td>to do 1</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="img/circle-fill.svg" style="width: 1.3em"></th>
+                        <td style="text-decoration: line-through;">to do 1</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><img src="img/circle.svg" style="width: 1.3em"></th>
+                        <td>to do 1</td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
+            <button class=""></button>
         </div>
     </div>
 </div>
 <!-- Floating Action Button like Google Material -->
-<img id="newtask" style="height: 8em; "src="img/writing-tool5.svg">
+<img id="newtask" style="height: 8em; " src="img/writing-tool5.svg">
 <!--footer-->
 <nav id="bottom_nav" class="navbar fixed-bottom position-sticky navbar-light bg-light noselect mt-4">
 

@@ -179,7 +179,7 @@ function task(data) {
 }
 
 //get tasks
-function last_task(data) {
+function history_task(data) {
     let li = `<li class="media mt-3" done="${data.done}">
                     <div name="status"></div>
                     <div class="media-body">
@@ -189,7 +189,7 @@ function last_task(data) {
                             <div class="row justify-content-end">
                                 <div name="created" >${format_time(data.created)} → </div>
                                 &nbsp;<div name="completed" >${format_time(data.completed)}</div>
-                                <div name="trash" ></div>
+                                <div name="copy" ></div>
                             </div>
                         </div>
                     </div>
@@ -225,7 +225,7 @@ function make_history_todolist(data) {
     let ul = div.find('ul');
     for (i = 0; i < data.length; i++) {
         for(j = 0; j < data[i].length; j++) {
-            ul.append(last_task(data[i][j]));
+            ul.append(history_task(data[i][j]));
         }
     }
 }
