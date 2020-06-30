@@ -178,24 +178,7 @@ function task(data) {
     return li;
 }
 
-//get tasks
-function history_task(data) {
-    let li = `<li class="media mt-3" done="${data.done}">
-                    <div name="status"></div>
-                    <div class="media-body">
-                        <div name="text">${data.desc}</div>
-                        <div>
-                            <hr class="my-1 border">
-                            <div class="row justify-content-end">
-                                <div name="created" >${format_time(data.created)} → </div>
-                                &nbsp;<div name="completed" >${format_time(data.completed)}</div>
-                                <div name="copy" ></div>
-                            </div>
-                        </div>
-                    </div>
-                </li>`;
-    return li;
-}
+
 
 
 function get_current_time() {
@@ -219,16 +202,7 @@ function make_todolist(data) {
     }
 }
 
-function make_history_todolist(data) {
-    let div = $('#histroy_todo');
-    div.html(`<ul class="list-unstyled"></ul>`);
-    let ul = div.find('ul');
-    for (i = 0; i < data.length; i++) {
-        for(j = 0; j < data[i].length; j++) {
-            ul.append(history_task(data[i][j]));
-        }
-    }
-}
+
 
 //data = {desc: 'some text', created: '[14:34]', done: 'false'}
 var data = [
@@ -238,33 +212,9 @@ var data = [
 ];
 
 
-var lastTodo = [
-    [
-        {desc: "some text1", created: "2020-06-19T19:38:22+03:00", completed: "--:--", done: 'false'},
-        {desc: "some text2", created: "2020-06-19T14:33:22+03:00", completed: "2020-06-19T15:33:22+03:00", done: 'true'},
-        {desc: "some text2", created: "2020-06-19T14:33:22+03:00", completed: "2020-06-19T15:33:22+03:00", done: 'true'},
-        {desc: "some text2", created: "2020-06-18T14:33:22+03:00", completed: "2020-06-18T15:33:22+03:00", done: 'true'},
-        {desc: "some text2", created: "2020-06-18T14:33:22+03:00", completed: "2020-06-18T15:33:22+03:00", done: 'true'},
-        {desc: "some text2", created: "2020-06-18T14:33:22+03:00", completed: "2020-06-18T15:33:22+03:00", done: 'true'},
-        {desc: "some text2", created: "2020-06-18T14:33:22+03:00", completed: "--:--", done: 'false'},
-        {desc: "some text2", created: "2020-06-18T14:33:22+03:00", completed: "--:--", done: 'false'},
-    ], [
-        {desc: "some text2", created: "2020-06-17T14:33:22+03:00", completed: "--:--", done: 'false'},
-        {desc: "some text2 some text2some text2some text2some text2some text2", created: "2020-06-17T14:33:22+03:00", completed: "2020-06-17T16:33:22+03:00", done: 'true'},
-        {desc: "some text2", created: "2020-06-17T14:33:22+03:00", completed: "--:--", done: 'false'},
-        {desc: "some text2", created: "2020-06-17T14:33:22+03:00", completed: "--:--", done: 'false'},
-        {desc: "some text2", created: "2020-06-17T14:33:22+03:00", completed: "2020-06-17T16:33:22+03:00", done: 'true'},
-        {desc: "some text2", created: "2020-06-17T14:33:22+03:00", completed: "--:--", done: 'false'},
-    ], [
-        {desc: "some text2", created: "2020-06-01T14:33:22+03:00", completed: "--:--", done: 'false'},
-        {desc: "some text2", created: "2020-06-01T14:33:22+03:00", completed: "2020-06-01T18:33:22+03:00", done: 'true'},
-        {desc: "some text3", created: "2020-06-01T16:12:22+03:00", completed: "2020-06-01T18:12:22+03:00", done: 'true'}
-    ]
-];
 
 
 make_todolist(data);
-make_history_todolist(lastTodo);
 
 $(function () {
     $('input, select').on('focus', function () {

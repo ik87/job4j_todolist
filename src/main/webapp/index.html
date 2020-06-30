@@ -11,6 +11,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/sidepanel.css">
+    <link rel="stylesheet" href="css/history_style.css">
 
     <title>todo</title>
 </head>
@@ -24,8 +25,8 @@
 <nav id="top_nav" class="navbar navbar-expand-lg fixed-top position-sticky navbar-dark bg-dark noselect">
     <!--count-->
     <div class="text-white mx-auto ml-lg-5 mt-1">
-        <div> done <span id="count_done" class="badge badge-light">0</span>
-            | open <span id="count_open" class="badge badge-light">0</span>
+        <div>open <span id="count_open" class="badge badge-light">0</span>
+            | done <span id="count_done" class="badge badge-light">0</span>
         </div>
     </div>
     <div class="mx-auto ml-lg-5 mt-3 ">
@@ -55,14 +56,14 @@
                     </div>
                     </span>
             </li>
-            <li class="nav-item active">
-                    <span id="histroy" class="row mx-auto mx-lg-3">
-                    <img src="img/history_img.svg" class="align-self-center mr-1" style="height: 1.6em">
-                    <div class="media-body">
-                    <h6 class="mt-2 " style="color: #e4e3e3">HISTORY</h6>
-                    </div>
-                    </span>
-            </li>
+            <!--            <li class="nav-item active">
+                                <span id="histroy" class="row mx-auto mx-lg-3">
+                                <img src="img/history_img.svg" class="align-self-center mr-1" style="height: 1.6em">
+                                <div class="media-body">
+                                <h6 class="mt-2 " style="color: #e4e3e3">HISTORY</h6>
+                                </div>
+                                </span>
+                        </li>-->
             <li class="nav-item">
                     <span id="signin" class="row mx-auto  mx-lg-3 my-2 my-lg-0">
                     <img src="img/signin.svg" class="align-self-center mr-1" style="height: 1.5em">
@@ -158,97 +159,22 @@
 <div class="modal fade position-fixed" id="histroyModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog " role="document">
         <div class="modal-content ">
-            <div class="modal-header">
+            <div class="modal-header fixed-top position-sticky" style="background-color: white">
                 <h5 class="modal-title">Last todo</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <!--<div id="histroy_todo"></div>-->
-                <table class="table table-bordered table-dark">
-                    <thead>
-                    <tr class="bg-success">
-                        <th scope="col" colspan="2" class="col-md-11">04.06.2020</th>
-                        <th scope="col" class="col-md-1"><input type="checkbox"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row" style="width: 1%"><img src="img/circle.svg" style="width: 1.3em"></th>
-                        <td>to do 1</td>
-                        <td><input type="checkbox"></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><img src="img/circle-fill.svg" style="width: 1.3em"></th>
-                        <td style="text-decoration: line-through;">to do 1</td>
-                        <td><input type="checkbox"></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><img src="img/circle.svg" style="height: 1.3em"></th>
-                        <td>to do 1 to do 1 to do 1 to do 1 to do 1 to do 1 to do 1 to do 1 to do 1 to do 1 to do 1 </td>
-                        <td ><input type="checkbox"></td>
-                    </tr>
-                    </tbody>
-                </table>
+                <div id="histroy_todo">
 
-                <table class="table table-bordered table-dark">
-                    <thead>
-                    <tr class="bg-success">
-                        <th scope="col" colspan="2" class="col-md-11">04.06.2020</th>
-                        <th scope="col" class="col-md-1"><input type="checkbox"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row" style="width: 1%"><img src="img/circle.svg" style="width: 1.3em"></th>
-                        <td>to do 1</td>
-                        <td><input type="checkbox"></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><img src="img/circle-fill.svg" style="width: 1.3em"></th>
-                        <td style="text-decoration: line-through;">to do 1</td>
-                        <td><input type="checkbox"></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><img src="img/circle.svg" style="width: 1.3em"></th>
-                        <td>to do 1</td>
-                        <td><input type="checkbox"></td>
-                    </tr>
-                    </tbody>
-                </table>
-
-                <table class="table table-bordered table-dark">
-                    <thead>
-                    <tr class="bg-success">
-                        <th scope="col" colspan="2" class="col-md-11">04.06.2020</th>
-                        <th scope="col" class="col-md-1"><input type="checkbox"></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row" style="width: 1%"><img src="img/circle.svg" style="width: 1.3em"></th>
-                        <td>to do 1</td>
-                        <td><input type="checkbox"></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><img src="img/circle-fill.svg" style="width: 1.3em"></th>
-                        <td style="text-decoration: line-through;">to do 1</td>
-                        <td><input type="checkbox"></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><img src="img/circle.svg" style="width: 1.3em"></th>
-                        <td>to do 1</td>
-                        <td><input type="checkbox"></td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="p-2 ml-auto position-sticky fixed-bottom row" style="background-color: white;">
-                    <button type="button" class="btn btn-primary ml-auto">Large button</button>
-                    <button type="button" class="btn btn-secondary">Large button</button>
+            </div>
+                <div class="modal-footer position-sticky fixed-bottom row " style="background-color: white;">
+                    <button type="button" class="btn btn-secondary ml-auto">Cancel</button>
+                    <button type="button" class="btn btn-primary ml-2 mr-2">Add <span class="badge badge-light">4</span>
+                    </button>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -256,9 +182,14 @@
 <img id="newtask" style="height: 8em; " src="img/writing-tool5.svg">
 <!--footer-->
 <nav id="bottom_nav" class="navbar fixed-bottom position-sticky navbar-light bg-light noselect mt-4">
-
-    <span class="navbar-text ml-auto">
-    <div class="footer-copyright text-white">design
+    <span id="histroy" class="row  mx-0 mx-lg-auto">
+        <img src="img/history_img.svg" class="align-self-center mr-1" style="height: 1.6em">
+        <div class="media-body">
+        <h6 class="mt-2 " style="color: #e4e3e3">HISTORY</h6>
+        </div>
+    </span>
+    <span class="navbar-text mx-0 mx-lg-auto ">
+    <div class="footer-copyright text-white pt-2">md by
         <a class="text-white" href="https://github.com/ik87/job4j_cinema">©ik87</a>
     </div>
     </span>
@@ -278,6 +209,7 @@
 
 
 <script src="js/source.js"></script>
+<script src="js/history_source.js"></script>
 
 
 </body>
