@@ -38,6 +38,22 @@ function make_history_todolist(data) {
     }
 }
 
+//when click on general checkbox
+$("#histroy_todo").on('change', 'thead input[type=checkbox]', function() {
+    if(this.checked) {
+        selectAll(this, true);
+    } else {
+        selectAll(this, false);
+    }
+});
+
+function selectAll(parent, flag) {
+    let tr = $(parent).closest('table').children('tbody').children('tr');
+    for(i = 0 ; i < tr.length; i++) {
+        $(tr[i]).find('input').prop('checked', flag);
+    }
+}
+//test data
 var lastTodo = [
     [
         {desc: "some text1", created: "2020-06-19T19:38:22+03:00", completed: "--:--", done: 'false'},
