@@ -18,7 +18,7 @@
 <body>
 <!--nav bar logo-->
 <div class="navbar navbar-expand  navbar-dark bg-dark noselect">
-    <div class="mx-auto"><h2 class="text-white display-5" style="font-family: 'Conv_Lazer84'"><span>TODO WAVE</span>
+    <div class="mx-auto"><h2 class="text-white display-5"><span>TODO WAVE</span>
     </h2></div>
 </div>
 <!--nav bar sticky-->
@@ -73,6 +73,7 @@
     <!--ul list-->
     <div class="row">
         <div id="todo" class="col-lg-9 mx-auto mb-5">
+            <ul class="list-unstyled"></ul>
         </div>
     </div>
 
@@ -152,7 +153,7 @@
 <div class="modal fade position-fixed" id="histroyModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog " role="document">
         <div class="modal-content ">
-            <div class="modal-header fixed-top position-sticky" style="background-color: white">
+            <div class="modal-header fixed-top position-sticky  bg-white">
                 <h5 class="modal-title">Last todo</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -161,9 +162,10 @@
             <div class="modal-body">
                 <div id="histroy_todo">
             </div>
-                <div class="modal-footer position-sticky fixed-bottom row " style="background-color: white;">
-                    <button type="button" class="btn btn-secondary ml-auto">Cancel</button>
-                    <button type="button" class="btn btn-primary ml-2 mr-2">Add <span class="badge badge-light">4</span>
+                <div class="modal-footer position-sticky fixed-bottom row bg-white">
+                    <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal" aria-label="Close">Close</button>
+                    <button type="button" class="btn btn-secondary btn-sm ml-2 mr-2">Uncheck</Button>
+                    <button type="button" class="btn btn-primary btn-sm ml-2 mr-2" data-dismiss="modal" aria-label="Close">Add <span class="badge badge-light">0</span>
                     </button>
                 </div>
             </div>

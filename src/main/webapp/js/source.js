@@ -13,7 +13,7 @@ $('#todo').on("click", 'div[name="text"]', function (data) {
         $(this).prop('contenteditable', false);
         let nt = newtask();
         let li = $(this).parents('li');
-        console.log(li)
+        //console.log(li)
         li.after(nt);
         $(li.next(li)).find('div[name="text"]')
             .prop('contenteditable', true).focus();
@@ -56,7 +56,7 @@ $('#todo').on('click', 'div[name="status"]', function () {
 //when click on trash
 $('#todo').on('click', 'div[name="trash"]', function () {
     let li = $(this).parents()[3];
-    console.log(li);
+    //console.log(li);
     if ($(li).attr('done') == 'true') {
         $('#count_done').html(--count_done);
     } else {
@@ -194,9 +194,7 @@ function format_time(time) {
 }
 
 function make_todolist(data) {
-    let div = $('#todo');
-    div.html(`<ul class="list-unstyled"></ul>`);
-    let ul = div.find('ul');
+    let ul = $('#todo ul');
     for (i = 0; i < data.length; i++) {
         ul.append(task(data[i]));
     }
