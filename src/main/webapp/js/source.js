@@ -221,5 +221,21 @@ $(function () {
     $('input, select').on('blur', function () {
         $(this).parent().find('.input-group-text').css('border-color', '#ced4da');
     });
-})
+});
 
+function poll() {
+    $.ajax({
+        url: "serv", data: {action: "poll"}, success: function (data) {
+            //Update your dashboard gauge
+
+        }, dataType: "json", complete: poll, timeout: 30000
+    });
+}
+
+
+
+function load_state() {
+    $.get(function () {
+
+    })
+}
