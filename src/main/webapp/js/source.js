@@ -1,6 +1,6 @@
-var count_done = 0;
-var count_open = 0;
-var show_completed = true;
+let count_done = 0;
+let count_open = 0;
+let show_completed = true;
 //when write text
 $('#todo').on("click", 'div[name="text"]', function (data) {
     $(this).prop('contenteditable', true).focus();
@@ -125,6 +125,7 @@ $("#histroy").on('click', function () {
 function newtask() {
     let time = get_current_time();
     let data = {desc: '\xa0', created: time, completed: "--:--", done: 'false'};
+    console.log(time);
     return task(data);
 }
 

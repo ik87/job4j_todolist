@@ -15,7 +15,7 @@
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <compiler.version>3.8.0</compiler.version>
+    <compiler.version>3.8.1</compiler.version>
   </properties>
   <dependencies>
     <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
@@ -24,6 +24,12 @@
       <artifactId>javax.servlet-api</artifactId>
       <version>3.1.0</version>
       <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.api-client</groupId>
+      <artifactId>google-api-client</artifactId>
+      <version>1.30.10</version>
     </dependency>
 
     <dependency>
@@ -42,7 +48,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>4.13</version>
       <scope>test</scope>
     </dependency>
 
@@ -68,12 +74,30 @@
       <artifactId>gson</artifactId>
       <version>2.8.5</version>
     </dependency>
-
-
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>5.4.24.Final</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.5</version>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.197</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>job4jCinemaWebapp</finalName>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${compiler.version}</version>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
@@ -91,26 +115,6 @@
             </configuration>
             <goals>
               <goal>check</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.liquibase</groupId>
-        <artifactId>liquibase-maven-plugin</artifactId>
-        <version>3.6.2</version>
-        <configuration>
-          <changeLogFile>${basedir}/src/main/resources/db/master.xml</changeLogFile>
-          <url>${db.url}/job4j_cinema</url>
-          <driver>${db.driver}</driver>
-          <username>${db.username}</username>
-          <password>${db.password}</password>
-        </configuration>
-        <executions>
-          <execution>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>update</goal>
             </goals>
           </execution>
         </executions>
@@ -171,15 +175,6 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${compiler.version}</version>
-        <configuration>
-          <release>${maven.compiler.source}</release>
-          <encoding>${project.build.sourceEncoding}</encoding>
-        </configuration>
       </plugin>
     </plugins>
   </build>
